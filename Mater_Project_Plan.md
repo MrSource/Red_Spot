@@ -6,6 +6,7 @@ Master Project Plan
 > 
 >	The way to feedback places will be easy. You can feedback rating the places from 1 to 5 stars, also you can write what was your experience. The rating by stars will be divided in different categories, the categories will be place, service, environment and other depending on the place. For example, if the place that you visited is a restaurant you will be able to rate that restaurant by service, quality of the food, environment and our app will make some specific calculations for the overall starts of the place. To ensure the best experience with this application the teams decided to show in every post of the people who are using this app the timestamp because it will let the others see how that specific place was in a specific time. 
 >
->	The team will be using Slack as a working bench, also the project manager will be using Gantt charts to show his team visually how are they working, in what percentage of the project they are and also what are the deadlines of the project task.
+>The team will be using Slack as a working bench, also the project manager will be using Gantt charts to show his team visually how are they working, in what percentage of the project they are and also what are the deadlines of the project task.
+
 ----------------------------------------------------------------------------------------------------
 
