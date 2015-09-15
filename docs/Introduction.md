@@ -1,5 +1,5 @@
-Introduction & More
-===================
+Introduction
+=============
 >
 >
 >	The project’s name is Red Spot. Now the questions are, what is Red Spot and why is the app called like that? It’s very simple, Red Spot is a social network application that is going to change our day, this app will allow you to check-in in many different places where you would like to share with others (friends, family, co-workers and other). This app has the versatility of giving you the experience of being in a place without really being there. We give this name to the app because each time that you visit a place and would like to share your experience, pictures or any other thing like feedback you can turn on your GSP or put the location enable at your computer and the app will automatically put a ping on the map in order that others can view your photos and feedback and if they would like to go they can see exactly at the map where is that located. The name of the team who is developing this app is call the null terminators. This app will make a lot of things not just the one that has been described but the main idea is that one. The application will also allow people to add other friends, places or even better, create an event with your friends to visit one of the places.
