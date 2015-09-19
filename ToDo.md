@@ -1,16 +1,20 @@
 ### ToDo
 ========
 
-# Martin
+## Martin
 + Search: TypeAhead (Twitter)
 + google-> jQuery Ajax. Starts with : $.ajax
+
 ----------------------------------------------------------------------------------------------------
-# Ibraim
+## Ibraim
 + Data Dummy upload to database 
+
 ----------------------------------------------------------------------------------------------------
-# Raul
+## Raul
 + About: Escribir sobre nosotros y el website. Subir al tab de "about" como modal de bootstrap.
+
 ----------------------------------------------------------------------------------------------------
-# Luis
+## Luis
 + Landing page del log-in
+
 ----------------------------------------------------------------------------------------------------
