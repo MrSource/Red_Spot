@@ -2,15 +2,15 @@
 ========
 
 # Martin
-* Search: TypeAhead (Twitter)
-* google-> jQuery Ajax. Starts with : $.ajax
++ Search: TypeAhead (Twitter)
++ google-> jQuery Ajax. Starts with : $.ajax
 ----------------------------------------------------------------------------------------------------
 # Ibraim
-* Data Dummy upload to database 
++ Data Dummy upload to database 
 ----------------------------------------------------------------------------------------------------
 # Raul
-* About: Escribir sobre nosotros y el website. Subir al tab de "about" como modal de bootstrap.
++ About: Escribir sobre nosotros y el website. Subir al tab de "about" como modal de bootstrap.
 ----------------------------------------------------------------------------------------------------
 # Luis
-* Landing page del log-in
++ Landing page del log-in
 ----------------------------------------------------------------------------------------------------
