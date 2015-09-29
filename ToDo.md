@@ -7,7 +7,7 @@
 ----------------------------------------------------------------------------------------------------
 ## Ibraim
 + Data Dummy upload to database 
-+ Add a Spot.
++ Add a Spot
 ----------------------------------------------------------------------------------------------------
 ## Raul
 + About: Escribir sobre nosotros y el website. Subir al tab de "about" como modal de bootstrap.
