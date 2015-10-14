@@ -18,4 +18,4 @@
 
 ## Copyright and License
 
-Copyright 2015-2016 RedSpot, LIM. Code released under the [Apache 2.0](https://github.com/MrSource/Red_Spot).
+Copyright 2015-2016 [RedSpot](136.145.57.180), LIM. Code released under the [Apache 2.0](https://github.com/MrSource/Red_Spot).
