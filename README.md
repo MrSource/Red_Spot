@@ -8,12 +8,12 @@
 
 ## What Didn’t Worked Well?
 
-* Meetings
+* Merge File when uploading to the VM
 
 ## What We Learned?
 
 * TypeAhead Search Twitter
-* Connect to DB
+* Prepared Statement Management
 * Insert data to DB via Query
 
 ## Copyright and License
