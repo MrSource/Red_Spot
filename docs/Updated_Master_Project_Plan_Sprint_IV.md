@@ -1,5 +1,5 @@
 Updated Master Project Plan for Sprint III
-======================================+===
+==========================================
 
 * The users may now review a spot by locating it from the map
 * Establishment rating system has been implemented 
