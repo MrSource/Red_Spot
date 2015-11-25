@@ -8,13 +8,16 @@
 
 ## What Didn’t Worked Well?
 
-* Merge File when uploading to the VM
+* Merge File when uploading to GITHUB
 
 ## What We Learned?
 
-* TypeAhead Search Twitter
 * Prepared Statement Management
 * Insert data to DB via Query
+* Delete data to DB via Query
+* UPDATE data to DB via Query
+* Select data from DB via Query
+* Much more
 
 ## Copyright and License
 

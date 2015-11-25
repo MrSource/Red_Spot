@@ -1,0 +1,109 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/lavish-bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/landing-page.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <style>
+      .spotfeed-container {
+            height: auto;
+            border-radius: 10px;
+            border-top: 50px solid #e81354;
+            background: #ffffff;
+            display: block;
+        }
+              .spotfeed-left-title{
+                position: relative;
+                top: -80px;
+                text-align: left;
+                color: white;
+              }
+                    .spotfeed-center-title{
+                position: relative;
+                top: -80px;
+                text-align: center;
+                color: white;
+              }
+    </style>
+  </head><body>
+    <div class="cover">
+      <div class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span>Red Spot</span></a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="../userHome.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;&nbsp;Home</a>
+              </li>
+              <li>
+                <a href="#" id="userHomeProfileLink"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;Profile</a>
+              </li>
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp;&nbsp;Notifications&nbsp;&nbsp;<span class="badge">0</span></a>
+              </li>
+              <li>
+                <a class="btn btn-primary" id="logoutButton">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="cover-image"></div>
+      <div class="container">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search spotters" aria-describedby="basic-addon2">
+          <span class="input-group-btn">
+            <a class="btn btn-primary" id="searchSpottersButton">Search</a>
+          </span>
+        </div>
+        <h1 class="text-center">Spot Feed</h1>
+        <div class="well spotfeed-container">
+          <h2 class="spotfeed-left-title">Spot Event Heading</h2>
+          <h3>A long title for spot event</h3>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus
+            ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
+            sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed
+            odio dui.</p>
+        </div>
+        <div class="well spotfeed-container">
+          <h2 class="spotfeed-center-title">Spot Event Heading</h2>
+          <div class="section">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="../img/3704766447_f59c3d5aa5_o.jpg" class="img-responsive">
+                </div>
+                <div class="col-md-5">
+                  <h1>A title for the spot event</h1>
+                  <h3>A subtitle</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+                    dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+                    nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+                    enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+                    felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+                    elementum semper nisi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
