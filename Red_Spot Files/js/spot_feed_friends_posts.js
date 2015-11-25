@@ -31,6 +31,7 @@ function extractSpotFeed() {
         url: "../scripts/spot_feed_friends_posts.php",
         data: {theFunction: "getSpotFeed", theData: theInformation}
     }).done(function (response) {
+        console.log(response);
         returnedData = JSON.parse(response);
         console.log(returnedData[0][0]['username']);
         //First let's populate the ordinary data
@@ -76,8 +77,17 @@ function extractSpotFeed() {
                         '</li>' +
                         '</ul></div>' +
                         '<div><a href="#" id="friendSpotFeedMapURL' +
-                        i + '" style="display: none;">Location</a></div>'
+                        i + '" style="display: none;">Location</a></div>'+
+                        '<div id="commentsDivision' + i + '">' +
+                        '<br><textarea rows="3" placeholder="Comments" style="width: 100%;" id="userCommentOnSpotFeedTextArea' +
+                        i + '"></textarea>' +
+                        '<br><br><a href="#" class="btn btn-primary pull-right" id="submitUserCommentOnSpotFeedButton' +
+                        i + '">Submit comment</a><br><br>' +
+                        '</div><div>' +
+                        '<h4>Comments:</h4><p class="text-info"><small id="commentUser' + i + '"></small></p>' +
+                        '<p class="text-info" id="comment' + i + '"></p>'
                 '</div>' +
+                        '</div>' +
                         '</div>' +
                         '</div>' +
                         '</div>';
@@ -105,6 +115,39 @@ function extractSpotFeed() {
                         friendSpotFeedPhoto.attr("src", returnedData[1][j].photo);
                     }
                 }
+                
+                //Set the comments if available
+                $('#commentUser' + i).html(returnedData[2][i].username);
+                $('#comment' + i).html(returnedData[2][i].comment);
+                
+                var submitUserCommentOnSpotFeedButton = $('#submitUserCommentOnSpotFeedButton' + i).on("click", function () {
+                    //Get the control number
+                    var theNumber = $(this).attr('id').replace(/[^\d]/g, "");
+
+                    //Get the textbox associated with the submit comment button
+                    var userCommentOnSpotFeedTextArea = $('#userCommentOnSpotFeedTextArea' + theNumber);
+
+                    //Store the information on the comment
+                    //Check if there is something to comment
+                    if ($.trim(userCommentOnSpotFeedTextArea.val())) {
+                        var theInformation = {"username": theCurrentUser, "comment": userCommentOnSpotFeedTextArea.val(),
+                            "establishmentName": $('#friendSpotFeedWithoutPhotoEventHeading' + theNumber).html()};
+                        //AJAX request
+                        $.ajax({
+                            method: "POST",
+                            url: "../scripts/spot_feed_friends_comment.php",
+                            data: {theFunction: "submitComment", theData: JSON.stringify(theInformation)}
+                        }).done(function (response) {
+                            console.log(response);
+                            //Set the user who just posted the comment
+                            $('#commentUser' + theNumber).html(theCurrentUser);
+                            $('#comment' + theNumber).html(userCommentOnSpotFeedTextArea.val());
+                            userCommentOnSpotFeedTextArea.hide();
+                            $('#submitUserCommentOnSpotFeedButton' + theNumber).hide();
+                            $('#commentsDivision' + theNumber).hide();
+                        });
+                    }
+                });
             }
             else {
                 var friendSpotFeedWithoutPhotoEventHTML = '<div class="well spotfeed-container">' +
@@ -132,10 +175,19 @@ function extractSpotFeed() {
                         '</ul></div>' +
                         '<div><a href="#" id="friendSpotFeedWithoutPhotoMapURL' +
                         i + '" style="display: none;">Location</a></div>' +
+                        '<div id="commentsDivision' + i + '">' +
+                        '<br><textarea rows="3" placeholder="Comments" style="width: 100%;" id="userCommentOnSpotFeedTextArea' +
+                        i + '"></textarea>' +
+                        '<br><br><a href="#" class="btn btn-primary pull-right" id="submitUserCommentOnSpotFeedButton' +
+                        i + '">Submit comment</a><br><br>' +
+                        '</div><div>' +
+                        '<h4>Comments:</h4><p class="text-info"><small id="commentUser' + i + '"></small></p>' +
+                        '<p class="text-info" id="comment' + i + '"></p>'
+                '</div>' +
                         '</div>';
-                
+
                 friendSpotFeedWithoutPhotoWellsContainer.append(friendSpotFeedWithoutPhotoEventHTML);
-                
+
                 $("#firendSpotFeedWithoutPhotoEstablishmentScale" + i + " li").each(function (index) {
                     if ($(this).index() < returnedData[0][i].scale) {
                         $(this).removeClass("active");
@@ -151,6 +203,39 @@ function extractSpotFeed() {
                     friendSpotFeedMapURL.attr("href", "https://www.google.com/maps?q=" + returnedData[0][i].latitude + "," +
                             returnedData[0][0].longitude);
                 }
+
+                //Set the comments if available
+                $('#commentUser' + i).html(returnedData[2][i].username);
+                $('#comment' + i).html(returnedData[2][i].comment);
+
+                var submitUserCommentOnSpotFeedButton = $('#submitUserCommentOnSpotFeedButton' + i).on("click", function () {
+                    //Get the control number
+                    var theNumber = $(this).attr('id').replace(/[^\d]/g, "");
+
+                    //Get the textbox associated with the submit comment button
+                    var userCommentOnSpotFeedTextArea = $('#userCommentOnSpotFeedTextArea' + theNumber);
+
+                    //Store the information on the comment
+                    //Check if there is something to comment
+                    if ($.trim(userCommentOnSpotFeedTextArea.val())) {
+                        var theInformation = {"username": theCurrentUser, "comment": userCommentOnSpotFeedTextArea.val(),
+                            "establishmentName": $('#friendSpotFeedWithoutPhotoEventHeading' + theNumber).html()};
+                        //AJAX request
+                        $.ajax({
+                            method: "POST",
+                            url: "../scripts/spot_feed_friends_comment.php",
+                            data: {theFunction: "submitComment", theData: JSON.stringify(theInformation)}
+                        }).done(function (response) {
+                            console.log(response);
+                            //Set the user who just posted the comment
+                            $('#commentUser' + theNumber).html(theCurrentUser);
+                            $('#comment' + theNumber).html(userCommentOnSpotFeedTextArea.val());
+                            userCommentOnSpotFeedTextArea.hide();
+                            $('#submitUserCommentOnSpotFeedButton' + theNumber).hide();
+                            $('#commentsDivision' + theNumber).hide();
+                        });
+                    }
+                });
             }
         }
     });

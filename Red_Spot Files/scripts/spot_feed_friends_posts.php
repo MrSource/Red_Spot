@@ -57,14 +57,14 @@ if (isset($_POST['theFunction'])) {
                     $stmt2->bind_result($username1, $establishmentName, $latitude, $longitude, $review, $scale);
                     while ($stmt2->fetch()) {
                         //Put the results into an array
-                        $establishmentLocationArray[] = ["username" => $username1, 
+                        $establishmentLocationArray[] = ["username" => $username1,
                             "establishmentName" => $establishmentName, "latitude" => $latitude,
-                            "longitude" => $longitude, "review" => $review, "scale" =>$scale];
+                            "longitude" => $longitude, "review" => $review, "scale" => $scale];
                     }
                 }
                 $stmt2->close();
             }
-            
+
             //Query to get establishment image from establishment_gallery
             $query3 = "SELECT * FROM establishment_gallery WHERE username = ?";
             $establishmentGalleryArray = array();
@@ -75,14 +75,31 @@ if (isset($_POST['theFunction'])) {
                     $stmt3->bind_result($username1, $establishmentName, $photo);
                     while ($stmt3->fetch()) {
                         //Put the results into an array
-                        $establishmentGalleryArray[] = ["username" => $username1, 
+                        $establishmentGalleryArray[] = ["username" => $username1,
                             "establishmentName" => $establishmentName, "photo" => $photo];
                     }
                 }
                 $stmt3->close();
             }
-            
-            echo json_encode([$establishmentLocationArray, $establishmentGalleryArray]);
+
+            //Query to get comments from establishment
+            $query4 = "SELECT * FROM spot_feed_comments WHERE `establishmentName` = ?";
+            $establishmentComments = array();
+            if ($stmt4 = $mysqli->prepare($query4)) {
+                for($n = 0; $n < count($establishmentLocationArray); $n++) {
+                    $stmt4->bind_param("s", $establishmentLocationArray[$n]['establishmentName']);
+                    $stmt4->execute();
+                    $stmt4->bind_result($username3, $comment, $establishmentName3);
+                    while ($stmt4->fetch()) {
+                        $establishmentComments[] = ["username" => $username3,
+                            "establishmentName" => $establishmentName3, "comment" => $comment];
+                    }
+                }
+
+                $stmt4->close();
+            }
+
+            echo json_encode([$establishmentLocationArray, $establishmentGalleryArray, $establishmentComments]);
         }
     }
 }
